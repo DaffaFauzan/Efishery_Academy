@@ -1,3 +1,4 @@
+-- Perintah Create
 create table customers(
 	id int not null,
 	customer_name char(50) not null,
@@ -22,14 +23,13 @@ create table Orders(
 	foreign key (product_id) references products (id)
 );
 
-
-
 table customers;
 table products;
 table orders ;
 
 select * from customers,products,Orders;
 
+-- Perintah Insert
 insert into public.customers (id,customer_name)
 values 
 	(101,'adit'),
@@ -58,6 +58,7 @@ values
 	(9,102,204,'2022-11-3',2),
 	(10,101,204,'2022-11-4',1);
 
+-- Perintah Update
 update public.orders 
 set total = 10
 where order_id =7;
@@ -70,6 +71,7 @@ update public.products
 set name = 'PC'
 where id =204;
 
+-- Perintah delete 
 delete 
 from public.orders 
 where order_id =10;
@@ -79,10 +81,19 @@ delete
 from public.customers  
 where id=102;
 
+-- Perintah dibawah error karena terdapat row pada table orders yang menggunakan id tersebut sebagai foreign key
 delete 
 from public.products  
 where id=201;
 
+
+-- Perintah Join
+select * 
+from orders join customers on customer_id = id; 
+
+
+select * 
+from orders join products on product_id = id; 
 
 
 
