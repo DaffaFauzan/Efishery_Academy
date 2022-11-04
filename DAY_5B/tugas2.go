@@ -1,4 +1,4 @@
-// TUGAS 2 Hari ke 5 masih on progress
+// TUGAS 2 Hari ke 5 yg opsional masih on progress
 package main
 
 import (
